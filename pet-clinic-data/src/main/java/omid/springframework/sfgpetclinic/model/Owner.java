@@ -1,15 +1,17 @@
 package omid.springframework.sfgpetclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by omid on 12/12/2020.
  */
 public class Owner extends Person {
-    private Set<Pet> pets;
+
     private String address;
     private String city;
     private String telephone;
+    private Set<Pet> pets =  new HashSet<>();
 
     public Set<Pet> getPets() {
         return pets;
