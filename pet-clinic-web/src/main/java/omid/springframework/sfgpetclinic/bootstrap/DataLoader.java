@@ -1,10 +1,7 @@
 package omid.springframework.sfgpetclinic.bootstrap;
 
 import omid.springframework.sfgpetclinic.model.*;
-import omid.springframework.sfgpetclinic.services.OwnerService;
-import omid.springframework.sfgpetclinic.services.PetTypeService;
-import omid.springframework.sfgpetclinic.services.SpecialtyService;
-import omid.springframework.sfgpetclinic.services.VetService;
+import omid.springframework.sfgpetclinic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -57,6 +56,8 @@ public class DataLoader implements CommandLineRunner {
         owner1.setTelephone("1231231231");
         ownerService.save(owner1);
 
+
+
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
         mikesPet.setOwner(owner1);
@@ -80,6 +81,12 @@ public class DataLoader implements CommandLineRunner {
         fionaCat.setBirthDate(LocalDate.now());
         fionaCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionaCat);
+
+        Visit catVisit = new Visit();
+        catVisit.setDate(LocalDate.now());
+        catVisit.setPet(fionaCat);
+        catVisit.setDescription("Sneezy kitteeee");
+        visitService.save(catVisit);
 
         Specialty radiology = new Specialty();
         radiology.setDescription("radiology");

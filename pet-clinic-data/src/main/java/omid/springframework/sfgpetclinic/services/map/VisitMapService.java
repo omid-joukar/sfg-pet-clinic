@@ -1,13 +1,20 @@
 package omid.springframework.sfgpetclinic.services.map;
 
+import omid.springframework.sfgpetclinic.model.Pet;
 import omid.springframework.sfgpetclinic.model.Visit;
+import omid.springframework.sfgpetclinic.services.PetService;
 import omid.springframework.sfgpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Service
 public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
+    private final PetService petService;
 
+    public VisitMapService(PetService petService) {
+        this.petService = petService;
+    }
 
     @Override
     public Set<Visit> findAll() {
@@ -21,9 +28,14 @@ public class VisitMapService extends AbstractMapService<Visit,Long> implements V
 
     @Override
     public Visit save(Visit visit) {
-        if (visit.getPet() == null || visit.getPet().getOwner() == null || visit.getPet().getId() == null || visit.getPet().getOwner().getId() == null){
-            throw new RuntimeException("Initialize visit");
-        }
+            if (visit.getPet()!= null) {
+                if (visit.getPet().getId() == null) {
+                    Pet pet = petService.save(visit.getPet());
+                    visit.getPet().setId(pet.getId());
+                } else {
+                    throw new RuntimeException("Initialize visit");
+                }
+            }
         return super.save(visit);
     }
 
