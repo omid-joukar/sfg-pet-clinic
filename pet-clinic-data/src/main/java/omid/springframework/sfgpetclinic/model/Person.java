@@ -1,10 +1,16 @@
 package omid.springframework.sfgpetclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 /**
  * Created by omid on 12/12/2020.
  */
+@MappedSuperclass
 public class Person extends BaseEntity{
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
 
 
