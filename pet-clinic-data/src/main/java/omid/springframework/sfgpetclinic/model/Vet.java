@@ -1,5 +1,7 @@
 package omid.springframework.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,6 +9,11 @@ import java.util.Set;
 /**
  * Created by omid on 12/12/2020.
  */
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
@@ -16,11 +23,4 @@ public class Vet extends Person {
     inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialities = new HashSet<>();
 
-    public Set<Specialty> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(Set<Specialty> specialities) {
-        this.specialities = specialities;
-    }
 }
