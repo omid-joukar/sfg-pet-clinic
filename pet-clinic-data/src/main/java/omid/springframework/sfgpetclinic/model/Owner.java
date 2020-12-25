@@ -16,8 +16,9 @@ import java.util.Set;
 @Table(name = "owners")
 public class Owner extends Person {
     @Builder
-    public Owner(String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
+    public Owner(Long id,String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
         super(firstName, lastName);
+        this.setId(id);
         this.address = address;
         this.city = city;
         this.telephone = telephone;
