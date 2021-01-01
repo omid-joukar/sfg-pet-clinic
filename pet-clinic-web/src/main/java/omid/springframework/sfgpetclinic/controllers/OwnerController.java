@@ -80,7 +80,6 @@ public class OwnerController {
         model.addAttribute("owner",ownerService.findById(ownerId));
         return "owners/createorupdateownersform";
     }
-
     @PostMapping("/{ownerId}/edit")
     public String processUpdateOwnerForm(@Valid Owner owner,BindingResult result,@PathVariable Long ownerId){
         if (result.hasErrors()){
