@@ -1,5 +1,8 @@
 D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\controllers\IndexController.java
+D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\formaters\PetTypeFormater.java
 D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\controllers\OwnerController.java
 D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\bootstrap\DataLoader.java
 D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\controllers\VetController.java
+D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\controllers\VisitController.java
+D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\controllers\PetController.java
 D:\sfg-pet-clinic\pet-clinic-web\src\main\java\omid\springframework\sfgpetclinic\SfgPetClinicApplication.java

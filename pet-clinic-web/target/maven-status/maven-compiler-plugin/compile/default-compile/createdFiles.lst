@@ -1,5 +1,9 @@
 omid\springframework\sfgpetclinic\controllers\OwnerController.class
 omid\springframework\sfgpetclinic\bootstrap\DataLoader.class
 omid\springframework\sfgpetclinic\SfgPetClinicApplication.class
+omid\springframework\sfgpetclinic\controllers\VisitController$1.class
 omid\springframework\sfgpetclinic\controllers\VetController.class
+omid\springframework\sfgpetclinic\controllers\PetController.class
 omid\springframework\sfgpetclinic\controllers\IndexController.class
+omid\springframework\sfgpetclinic\formaters\PetTypeFormater.class
+omid\springframework\sfgpetclinic\controllers\VisitController.class
