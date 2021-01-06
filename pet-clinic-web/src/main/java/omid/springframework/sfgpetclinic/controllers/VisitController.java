@@ -2,8 +2,6 @@ package omid.springframework.sfgpetclinic.controllers;
 
 import omid.springframework.sfgpetclinic.model.Pet;
 import omid.springframework.sfgpetclinic.model.Visit;
-import omid.springframework.sfgpetclinic.repositories.PetRepository;
-import omid.springframework.sfgpetclinic.repositories.VisitRepository;
 import omid.springframework.sfgpetclinic.services.PetService;
 import omid.springframework.sfgpetclinic.services.VisitService;
 import org.springframework.stereotype.Controller;
